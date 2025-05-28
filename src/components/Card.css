@@ -1,0 +1,154 @@
+/* Card Component Styles */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition-theme);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+/* Card Header */
+.card-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Card Content */
+.card-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Card without header */
+.card:not(:has(.card-header)) .card-content {
+  padding: 1.5rem;
+}
+
+/* Content styling */
+.card-content p {
+  margin-bottom: 1rem;
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
+}
+
+.card-content ul,
+.card-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.card-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.card-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.card-content code {
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.card-content pre {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.card-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* Card variants */
+.card.highlight {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+.card.compact {
+  border-radius: 0.5rem;
+}
+
+.card.compact .card-content {
+  padding: 1rem;
+}
+
+.card.compact .card-header {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.card.compact .card-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Interactive card */
+.card.interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.card.interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px 0 rgb(0 0 0 / 0.15);
+}
+
+.card.interactive:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    border-radius: 0.5rem;
+  }
+  
+  .card-header {
+    padding: 1rem 1rem 0 1rem;
+  }
+  
+  .card-content {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .card:not(:has(.card-header)) .card-content {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+}
